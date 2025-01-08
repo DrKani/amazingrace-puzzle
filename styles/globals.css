@@ -1,0 +1,59 @@
+/* Import Tailwind's base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set up our base font and styling rules */
+@layer base {
+  html {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* This ensures smooth scrolling behavior */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Creating a rich background gradient inspired by your AmazinGrace poster */
+    background: linear-gradient(
+      135deg,
+      #4B0082 0%,    /* Deep purple from your poster */
+      #2D004D 100%   /* Slightly darker shade for depth */
+    );
+    color: #E5C1A9;  /* The rose gold text color from your poster */
+    min-height: 100vh;
+  }
+}
+
+/* Custom component styles that we'll use throughout the puzzle interface */
+@layer components {
+  .puzzle-card {
+    /* Glass-like effect for cards */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(229, 193, 169, 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  .gradient-text {
+    /* Creates the beautiful gold gradient text effect from your poster */
+    background: linear-gradient(to right, #E5C1A9, #D4AF37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Animation utilities for interactive elements */
+@layer utilities {
+  .transition-all {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hover-scale {
+    transition: transform 0.2s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+}
